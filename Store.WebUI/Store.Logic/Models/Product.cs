@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Store.Logic.Models
 {
-    class Product
+    public class Product
     {
         /// <summary>
         /// Type of product.

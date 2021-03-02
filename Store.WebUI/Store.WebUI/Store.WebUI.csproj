@@ -9,10 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Store.Data\Store.DataAccess.csproj" />
     <ProjectReference Include="..\Store.Logic\Store.Logic.csproj" />
   </ItemGroup>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Store.Logic.Interfaces
 {
-    interface IProductRepository
+    public interface IProductRepository
     {
         /// <summary>
         /// Get all Products from Database.
@@ -17,12 +17,12 @@ namespace Store.Logic.Interfaces
         ///<summary>
         /// Add Product to db.
         /// </summary> 
-        public void AddProduct(Product item);
+        //public void AddProduct(Product item);
 
         /// <summary>
         /// Remove Product from db.
         /// </summary>
-        public void RemoveProduct(Product item);
+        //public void RemoveProduct(Product item);
 
         /// <summary>
         /// Save changes to database.
