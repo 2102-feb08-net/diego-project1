@@ -11,10 +11,6 @@ loadProducts()
                              <td>${message.type}</td>
                              <td>${message.name}</td>
                              <td>${message.price}</td>`;
-            row.addEventListener('click', () => {
-                sessionStorage.setItem('messageId', message.id);
-                location = 'index.html';
-            });
         }
 
         inboxTable.hidden = false;

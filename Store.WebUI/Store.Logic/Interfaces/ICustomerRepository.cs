@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Store.Logic.Interfaces
 {
-    interface ICustomerRepository
+    public interface ICustomerRepository
     {
         /// <summary>
         /// Add Customer to Database.
@@ -17,17 +17,17 @@ namespace Store.Logic.Interfaces
         /// <summary>
         /// Get customer from database given an id.
         /// </summary>
-        public Customer GetCustomerById(int id);
+        //public Customer GetCustomerById(int id);
 
         /// <summary>
         /// Get customer from database given an email.
         /// </summary>
-        public Customer GetCustomerByEmail(string mail);
+        //public Customer GetCustomerByEmail(string mail);
 
         /// <summary>
         /// Get all customers from database.
         /// </summary>
-        public IEnumerable<Customer> GetCustomers();
+        //public IEnumerable<Customer> GetCustomers();
 
         /// <summary>
         /// Save changes to Database.

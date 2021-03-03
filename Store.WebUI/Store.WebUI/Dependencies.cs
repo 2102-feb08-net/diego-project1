@@ -35,6 +35,14 @@ namespace Store.WebUI
             return new ProductRepository(dbContext);
         }
 
+        // Customer Repository
+        public ICustomerRepository CreateCustomerRepository()
+        {
+            var dbContext = CreateDbContext();
+            _disposableInterfaces.Add(dbContext);
+            return new CustomerRepository(dbContext);
+        }
+
         public void Dispose()
         {
             Dispose(true);

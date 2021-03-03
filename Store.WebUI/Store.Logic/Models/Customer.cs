@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Store.Logic.Models
 {
-    class Customer
+    public class Customer
     {
         /// <summary>
         /// Customer First Name.

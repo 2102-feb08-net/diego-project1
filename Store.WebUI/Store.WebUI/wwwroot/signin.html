@@ -5,11 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    
+    <!--Tab Icon-->
+    <link rel="icon" href="gc_icon.jpg" type="image/x-icon">
     <title>SignIn</title>
 </head>    
 <body>
-    <form class="section-1-container section-container">
+    <form class="section-1-container section-container" id="registration-form" action="signin.js" method="post">
         <div class="container">
             <div class="row">
                 <div class="col-4 section-1 offset-5 section-description">
@@ -22,19 +23,19 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-4 section-1 offset-4 section-description">
+                <div class="col-4 section-1 offset-4 section-description" id="FirstName">
                     <p>First Name</p>
                     <input type="text" class="form-control">
                 </div>
             </div>
             <div class="row">
-                <div class="col-4 section-1 offset-4 section-description">
+                <div class="col-4 section-1 offset-4 section-description" id="LastName">
                     <p>Last Name</p>
                     <input type="text" class="form-control">
                 </div>
             </div>
             <div class="row">
-                <div class="col-4 section-1 offset-4 section-description">
+                <div class="col-4 section-1 offset-4 section-description" id="Email">
                     <p>Email</p>
                     <input type="text" class="form-control">
                 </div>
@@ -42,11 +43,11 @@
             <div class="row">
                 <div class="col-4 section-1 offset-4 section-description">
                     <p>Password</p>
-                    <input type="text" class="form-control" placeholder="8 characters min.">
+                    <input type="text" class="form-control" placeholder="8 characters min." id="Password">
                 </div>
             </div>
             <div class="row">
-                <div class="col-4 section-1 offset-4 section-description">
+                <div class="col-4 section-1 offset-4 section-description" id="PasswordRepeat">
                     <p>Re-enter password</p>
                     <input type="text" class="form-control"><br>
                 </div>
