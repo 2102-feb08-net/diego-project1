@@ -13,7 +13,7 @@ namespace Store.DataAccess.Repositories
 
         public CustomerRepository(project1rincongamezonestoreContext dbContext)
         {
-            _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
+            _dbContext = dbContext;
         }
 
         public void AddCustomer(Store.Logic.Models.Customer cust)

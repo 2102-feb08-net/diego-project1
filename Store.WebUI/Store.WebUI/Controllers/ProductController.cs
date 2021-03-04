@@ -14,17 +14,14 @@ namespace Store.WebUI.Controllers
     {
         private IProductRepository _productRepository;
 
-        public ProductController()
+        public ProductController(IProductRepository productRepository)
         {
-            using var dependency = new Dependencies();
-            _productRepository = dependency.CreateProductRepository();
+            _productRepository = productRepository;
         }
 
-        [HttpGet("product/all")]
+        [HttpGet("api/product/all")]
         public IEnumerable<Store.Logic.Models.Product> GetProducts()
         {
-            using var dependency = new Dependencies();
-            _productRepository = dependency.CreateProductRepository();
             return _productRepository.GetProducts();
         }
 

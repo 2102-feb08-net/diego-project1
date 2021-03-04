@@ -13,7 +13,7 @@ namespace Store.DataAccess.Repositories
 
         public ProductRepository(project1rincongamezonestoreContext dbContext)
         {
-            _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
+            _dbContext = dbContext;
         }
 
         // Make the list of products

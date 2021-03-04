@@ -9,8 +9,13 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Store.DataAccess.Entities;
+using Microsoft.EntityFrameworkCore;
+using Store.Logic.Interfaces;
+using Store.DataAccess.Repositories;
 
 namespace Store.WebUI
 {
@@ -26,6 +31,16 @@ namespace Store.WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Repositories
+            string connectionString = File.ReadAllText("C:/Users/Uno/Documents/Rev/ProjectSchemas/project1Connection.txt");
+
+            services.AddDbContext<project1rincongamezonestoreContext>(options =>
+            {
+                options.UseSqlServer(connectionString);
+            });
+
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

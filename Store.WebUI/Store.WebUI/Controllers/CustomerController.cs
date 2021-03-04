@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Store.Logic.Interfaces;
+using Store.WebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,14 +14,13 @@ namespace Store.WebUI.Controllers
     {
         private ICustomerRepository _customerRepository;
 
-        public CustomerController()
+        public CustomerController(ICustomerRepository customerRepository)
         {
-            using var dependency = new Dependencies();
-            _customerRepository = dependency.CreateCustomerRepository();
+            _customerRepository = customerRepository;
         }
 
-        [HttpPost("customer/registration")]
-        public void AddCustomer(string jsonList)
+        [HttpPost("api/customer/registration")]
+        public void AddCustomer(WebCustomer customer)
         {
             // Get data from signin.html table
             // Call method AddCustomer from CustomerRepository
