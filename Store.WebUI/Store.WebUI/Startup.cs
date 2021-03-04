@@ -32,7 +32,7 @@ namespace Store.WebUI
         public void ConfigureServices(IServiceCollection services)
         {
             // Repositories
-            string connectionString = File.ReadAllText("C:/Users/Uno/Documents/Rev/ProjectSchemas/project1Connection.txt");
+            string connectionString = Configuration.GetConnectionString("StoreDb");
 
             services.AddDbContext<project1rincongamezonestoreContext>(options =>
             {
