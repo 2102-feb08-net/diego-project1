@@ -23,6 +23,7 @@ namespace Store.WebUI.Controllers
         public void AddCustomer(WebCustomer customer)
         {
             // Get data from signin.html table
+            Console.WriteLine(customer.Email);
             // Call method AddCustomer from CustomerRepository
             // Save form data in database
         }

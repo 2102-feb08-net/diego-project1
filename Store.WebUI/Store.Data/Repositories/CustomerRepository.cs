@@ -21,7 +21,9 @@ namespace Store.DataAccess.Repositories
             var entity = new Customer
             {
                 FirstName = cust.FirstName,
-                LastName = cust.LastName
+                LastName = cust.LastName,
+                Email = cust.Email,
+                Password = cust.Password
             };
 
             _dbContext.Add(entity);
