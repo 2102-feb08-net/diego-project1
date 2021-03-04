@@ -16,3 +16,6 @@ steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: dotnet build
   workingDirectory: Store.WebUI
+- script: dotnet test ~/Store.WebUI/StoreTests/StoreTests.csproj
+  displayName: dotnet test
+  workingDirectory: Store.WebUI
