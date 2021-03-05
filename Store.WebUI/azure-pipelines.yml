@@ -26,6 +26,10 @@ steps:
   displayName: dotnet build
   workingDirectory: Store.WebUI
 
+- script: dotnet test
+  displayName: dotnet test
+  workingDirectory: Store.WebUI/StoreTests
+
 - task: SonarCloudAnalyze@1
 
 - task: SonarCloudPublish@1
@@ -36,7 +40,3 @@ steps:
   inputs:
     codeCoverageTool: 'Cobertura'
     summaryFileLocation: '$(Agent.TempDirectory)/*/coverage.cobertura.xml'
-
-- script: dotnet test
-  displayName: dotnet test
-  workingDirectory: Store.WebUI/StoreTests
