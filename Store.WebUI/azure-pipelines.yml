@@ -21,15 +21,15 @@ steps:
     projectKey: '2102-feb08-net_diego-project1'
     projectName: 'diego-project1'
 
-- task: SonarCloudPublish@1
-  inputs:
-    pollingTimeoutSec: '300'
-
-- task: SonarCloudAnalyze@1
-
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: dotnet build
   workingDirectory: Store.WebUI
 - script: dotnet test
   displayName: dotnet test
   workingDirectory: Store.WebUI/StoreTests
+
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
+
+- task: SonarCloudAnalyze@1
