@@ -29,38 +29,38 @@
     <form class="section-1-container section-container" id="registration-form">
         <div class="container">
             <div class="row">
-                <div class="col-4 section-1 offset-4 section-description" id="FirstName">
+                <div class="col-4 section-1 offset-4 section-description">
                     <p>First Name</p>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="FirstName" required>
                 </div>
             </div>
             <div class="row">
-                <div class="col-4 section-1 offset-4 section-description" id="LastName">
+                <div class="col-4 section-1 offset-4 section-description">
                     <p>Last Name</p>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="LastName" required>
                 </div>
             </div>
             <div class="row">
-                <div class="col-4 section-1 offset-4 section-description" id="Email">
+                <div class="col-4 section-1 offset-4 section-description">
                     <p>Email</p>
-                    <input type="text" class="form-control">
+                    <input type="email" class="form-control" name="Email" required>
                 </div>
             </div>
             <div class="row">
-                <div class="col-4 section-1 offset-4 section-description">
+                <div class="col-4 section-1 offset-4 section-description" required>
                     <p>Password</p>
-                    <input type="text" class="form-control" placeholder="8 characters min." id="Password">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4 section-1 offset-4 section-description" id="PasswordRepeat">
-                    <p>Re-enter password</p>
-                    <input type="text" class="form-control"><br>
+                    <input type="password" class="form-control" placeholder="8 characters min." name="Password" required>
                 </div>
             </div>
             <div class="row">
                 <div class="col-4 section-1 offset-4 section-description">
-                    <input type="submit" class="form-control" value="Submit">
+                    <p>Re-enter password</p>
+                    <input type="password" class="form-control" name="PasswordRepeat" required><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 section-1 offset-4 section-description">
+                    <input type="submit" class="form-control" value="Send">
                 </div>
             </div>
         </div>

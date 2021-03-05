@@ -39,12 +39,14 @@ namespace Store.Logic.Models
         /// <summary>
         /// Constructor for use of UI.
         /// </summary>
-        public Customer(string firstName, string lastName)
+        public Customer(string firstName, string lastName, string email, string password)
         {
             if (ValidateName(firstName, lastName))
             {
                 FirstName = firstName;
                 LastName = lastName;
+                Email = email;
+                Password = password;
             }
 
         }
