@@ -25,11 +25,11 @@ steps:
   displayName: dotnet build
   workingDirectory: Store.WebUI
 
+- task: SonarCloudAnalyze@1
+
 - task: SonarCloudPublish@1
   inputs:
     pollingTimeoutSec: '300'
-
-- task: SonarCloudAnalyze@1
 
 - script: dotnet test
   displayName: dotnet test
