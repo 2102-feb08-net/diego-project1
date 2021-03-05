@@ -26,9 +26,12 @@ steps:
   displayName: dotnet build
   workingDirectory: Store.WebUI
 
-- script: dotnet test
+- task: DotNetCoreCLI@2
   displayName: dotnet test
-  workingDirectory: Store.WebUI/StoreTests
+  inputs:
+    command: 'test'
+    arguments: '--configuration $(buildConfiguration) --collect "xplat code coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=cobertura,opencover'
+    workingDirectory: Store.WebUI/StoreTests
 
 - task: SonarCloudAnalyze@1
 
