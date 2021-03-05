@@ -43,3 +43,20 @@ steps:
   inputs:
     codeCoverageTool: 'Cobertura'
     summaryFileLocation: '$(Agent.TempDirectory)/*/coverage.cobertura.xml'
+
+- task: DotNetCoreCLI@2
+  displayName: dotnet publish
+  inputs:
+    command: 'publish'
+    publishWebProjects: false
+    workingDirectory: 'Store.WebUI/Store.WebUI'
+    zipAfterPublish: true
+
+- task: AzureRmWebAppDeployment@4
+  displayName: app service deploy
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure subscription 1(e3450711-02f8-49c3-b563-6e6ba4e5f98c)'
+    appType: 'webApp'
+    WebAppName: '2102-rincon-store'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
