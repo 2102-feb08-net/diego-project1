@@ -29,6 +29,16 @@ namespace Store.DataAccess.Repositories
             _dbContext.Add(entity);
         }
 
+        // TODO Finish customer login
+        public Store.Logic.Models.Customer GetCustomerByEmail(string email, string password)
+        {
+            Customer customer = _dbContext.Customers.Find(email, password);
+            return new Store.Logic.Models.Customer {
+                FirstName = customer.FirstName
+            };
+            
+        }
+
         public void Save()
         {
             _dbContext.SaveChanges();

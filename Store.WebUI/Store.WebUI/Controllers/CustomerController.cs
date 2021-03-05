@@ -21,8 +21,7 @@ namespace Store.WebUI.Controllers
 
         [HttpPost("api/customer/registration")]
         public void AddCustomer(WebCustomer customer)
-        {
-            
+        {  
             // Store WebCustomer data into Logic Customer Model
             Store.Logic.Models.Customer newCustomer = new Logic.Models.Customer(customer.FirstName, customer.LastName, customer.Email, customer.Password);
 
@@ -32,5 +31,7 @@ namespace Store.WebUI.Controllers
             // Save form data in database
             _customerRepository.Save();
         }
+
+        // Get customer for login
     }
 }

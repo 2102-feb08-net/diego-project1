@@ -15,9 +15,9 @@ namespace Store.Logic.Interfaces
         public void AddCustomer(Customer cust);
 
         /// <summary>
-        /// Get customer from database given an id.
+        /// Get customer from database given an email and password.
         /// </summary>
-        //public Customer GetCustomerById(int id);
+        public Customer GetCustomerByEmail(string email, string passrord);
 
         /// <summary>
         /// Get customer from database given an email.
