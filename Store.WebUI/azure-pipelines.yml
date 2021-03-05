@@ -49,7 +49,7 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: false
-    workingDirectory: 'Store.WebUI/Store.WebUI'
+    workingDirectory: 'Store.WebUI'
     zipAfterPublish: true
 
 - task: AzureRmWebAppDeployment@4
