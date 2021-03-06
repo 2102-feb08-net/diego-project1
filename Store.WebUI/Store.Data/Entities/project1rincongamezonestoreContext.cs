@@ -32,6 +32,12 @@ namespace Store.DataAccess.Entities
             {
                 entity.ToTable("Customer", "GStore");
 
+                entity.HasIndex(e => e.Password, "UQ__Customer__87909B153CDD6B75")
+                    .IsUnique();
+
+                entity.HasIndex(e => e.Email, "UQ__Customer__A9D105346414D962")
+                    .IsUnique();
+
                 entity.Property(e => e.CustomerId).HasColumnName("CustomerID");
 
                 entity.Property(e => e.Email)

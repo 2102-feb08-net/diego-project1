@@ -17,7 +17,7 @@ namespace Store.Logic.Interfaces
         /// <summary>
         /// Get customer from database given an email and password.
         /// </summary>
-        public Customer GetCustomerByEmail(string email, string passrord);
+        public Customer GetCustomerByEmail(string email, string password);
 
         /// <summary>
         /// Get customer from database given an email.

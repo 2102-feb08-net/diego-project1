@@ -23,7 +23,8 @@ namespace Store.DataAccess.Repositories
                 FirstName = cust.FirstName,
                 LastName = cust.LastName,
                 Email = cust.Email,
-                Password = cust.Password
+                Password = cust.Password,
+                Admin = cust.Admin
             };
 
             _dbContext.Add(entity);

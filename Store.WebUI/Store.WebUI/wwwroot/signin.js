@@ -15,7 +15,8 @@ registrationForm.addEventListener('submit', event => {
         LastName: registrationForm.elements['LastName'].value,
         Email: registrationForm.elements['Email'].value,
         Password: registrationForm.elements['Password'].value,
-        PassWordRepeat: registrationForm.elements['PasswordRepeat'].value
+        PassWordRepeat: registrationForm.elements['PasswordRepeat'].value,
+        Admin: false
     };
 
     // Password validation

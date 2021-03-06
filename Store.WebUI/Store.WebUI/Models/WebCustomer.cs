@@ -23,5 +23,9 @@ namespace Store.WebUI.Models
         /// Customer password to login to store.
         /// </summary>
         public string Password { get; set; }
+        /// <summary>
+        /// Determines whether customer is an admin of the website.
+        /// </summary>
+        public bool Admin { get; set; }
     }
 }

@@ -28,6 +28,10 @@ namespace Store.Logic.Models
         /// Customer password to login to store.
         /// </summary>
         public string Password { get; set; }
+        /// <summary>
+        /// Determines whether customer is an admin of the website.
+        /// </summary>
+        public bool Admin { get; set; }
 
         /// <summary>
         /// Empty Constructor for queries. 
@@ -39,7 +43,7 @@ namespace Store.Logic.Models
         /// <summary>
         /// Constructor for use of UI.
         /// </summary>
-        public Customer(string firstName, string lastName, string email, string password)
+        public Customer(string firstName, string lastName, string email, string password, bool admin)
         {
             if (ValidateName(firstName, lastName))
             {
@@ -47,6 +51,7 @@ namespace Store.Logic.Models
                 LastName = lastName;
                 Email = email;
                 Password = password;
+                Admin = admin;
             }
 
         }
