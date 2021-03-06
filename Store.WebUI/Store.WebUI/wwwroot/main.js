@@ -24,3 +24,14 @@ function sendSignInForm(signinForm) {
         }
     });
 }
+
+// Load customer data
+function loadCustomer(account) {
+    const url = account !== undefined ? `/api/customer/login?account=${account}` : `/api/customer/login`;
+    return fetch(url).then(response => {
+        if (!response.ok) {
+            throw new Error(`Network response not ok (${response.status})`);
+        }
+        return response.json();
+    });
+}
