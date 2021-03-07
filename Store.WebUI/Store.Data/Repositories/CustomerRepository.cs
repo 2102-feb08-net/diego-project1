@@ -32,13 +32,19 @@ namespace Store.DataAccess.Repositories
 
         public Store.Logic.Models.Customer GetCustomerByEmail(string email, string password)
         {
-            Customer customer = _dbContext.Customers.Find(email, password);
-            
-            return new Store.Logic.Models.Customer {
-                FirstName = customer.FirstName, 
-                LastName = customer.LastName, 
-                Email = customer.Email
-            };
+            IQueryable<Customer> customer = _dbContext.Customers.Select(c => c).Where(c => c.Email == email && c.Password == password);
+            List<Customer> customerQuery = customer.ToList<Customer>();
+            Store.Logic.Models.Customer customerData = new Store.Logic.Models.Customer();
+
+            foreach(Customer cu in customerQuery)
+            {
+                customerData.FirstName = cu.FirstName;
+                customerData.LastName = cu.LastName;
+                customerData.Email = cu.Email;
+                customerData.Password = cu.Password;
+            }
+
+            return customerData;
             
         }
 
