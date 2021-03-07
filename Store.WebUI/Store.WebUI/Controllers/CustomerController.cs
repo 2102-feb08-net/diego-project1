@@ -33,17 +33,10 @@ namespace Store.WebUI.Controllers
         }
 
         // Get customer for login
-        [HttpGet("api/customer/login")]
+        [HttpGet("api/customer/login/{email}/{password}")]
         public Logic.Models.Customer GetCustomer(string email, string password)
         {
-            var customer = _customerRepository.GetCustomerByEmail(email, password);
-
-            return new Logic.Models.Customer
-            {
-                FirstName = customer.FirstName,
-                LastName = customer.LastName,
-                Email = customer.Email
-            };
+            return _customerRepository.GetCustomerByEmail(email, password);
         }
     }
 }

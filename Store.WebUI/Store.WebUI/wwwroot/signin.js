@@ -32,7 +32,7 @@ registrationForm.addEventListener('submit', event => {
             successMessage.textContent = 'Signup successful';
             successMessage.hidden = true;
             alert("Signup successful");
-            setTimeout(() => { window.location = "index.html";}, 8000);
+            setTimeout(() => { window.location = "index.html";}, 5000);
         })
         .catch(error => {
             errorMessage.textContent = error.toString();
