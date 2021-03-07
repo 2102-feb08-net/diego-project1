@@ -16,11 +16,12 @@ loginForm.addEventListener('submit', event => {
 
     loadCustomer(email, password)
         .then(customer => {
-            console.log("email: " + customer.Email + " pass: " + customer.Password);
+            console.log("customer: " + customer.email);
 
-            if (email == customer.Email) {
-                if (password == customer.Password) {
-                    sessionStorage.setItem('accountMail', customer.Email);
+
+            if (email == customer.email) {
+                if (password == customer.password) {
+                    sessionStorage.setItem('accountMail', customer.email);
                     sessionStorage.setItem('accountFirstName', customer.FirstName);
                     sessionStorage.setItem('accountLastName', customer.LastName);
                     window.location = "customerhome.html";

@@ -27,7 +27,9 @@ function sendSignInForm(signinForm) {
 
 // Load customer data
 function loadCustomer(email, password) {
-    return fetch(`api/customer/login/${email}/${password}`).then(response => {
+    var url = email !== undefined && password !== undefined ? `api/customer/login?email=${email}&&password=${password}` : '/api/customer/login';
+    
+    return fetch(url).then(response => {
         if (!response.ok) {
             throw new Error(`Network response not ok (${response.status})`);
         }

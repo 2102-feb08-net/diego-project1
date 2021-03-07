@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Store.DataAccess.Entities;
 
 namespace Store.DataAccess.Repositories
@@ -32,19 +33,14 @@ namespace Store.DataAccess.Repositories
 
         public Store.Logic.Models.Customer GetCustomerByEmail(string email, string password)
         {
-            IQueryable<Customer> customer = _dbContext.Customers.Select(c => c).Where(c => c.Email == email && c.Password == password);
-            List<Customer> customerQuery = customer.ToList<Customer>();
-            Store.Logic.Models.Customer customerData = new Store.Logic.Models.Customer();
+            var customer = _dbContext.Customers.Where(c => c.Email == email && c.Password == password).First();
 
-            foreach(Customer cu in customerQuery)
-            {
-                customerData.FirstName = cu.FirstName;
-                customerData.LastName = cu.LastName;
-                customerData.Email = cu.Email;
-                customerData.Password = cu.Password;
-            }
-
-            return customerData;
+            return new Store.Logic.Models.Customer { 
+                FirstName = customer.FirstName, 
+                LastName = customer.LastName, 
+                Email = customer.Email, 
+                Password = customer.Password
+            };
             
         }
 
