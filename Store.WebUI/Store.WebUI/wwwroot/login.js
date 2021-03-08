@@ -16,9 +16,6 @@ loginForm.addEventListener('submit', event => {
 
     loadCustomer(email, password)
         .then(customer => {
-            console.log("customer: " + customer.email);
-
-
             if (email == customer.email) {
                 if (password == customer.password) {
                     sessionStorage.setItem('accountMail', customer.email);

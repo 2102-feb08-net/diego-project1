@@ -38,8 +38,6 @@ namespace Store.WebUI.Controllers
         {
             var customerData = _customerRepository.GetCustomerByEmail(email, password);
 
-            System.Diagnostics.Debug.WriteLine("Email: " + customerData.Email);
-
             return new WebCustomer { 
                 FirstName = customerData.FirstName, 
                 LastName = customerData.LastName, 

@@ -1,5 +1,5 @@
 ﻿'use strict';
-
+// Load all products
 const inboxTable = document.getElementById('product-table');
 const errorMessage = document.getElementById('error-message');
 
@@ -20,3 +20,7 @@ loadProducts()
         errorMessage.textContent = error.toString();
         errorMessage.hidden = false;
     });
+
+// Load store inventory
+const userStore = document.getElementById('store-item1').value;
+console.log(userStore);
