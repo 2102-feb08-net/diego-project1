@@ -3,71 +3,71 @@
 # Add steps that run tests, create a NuGet package, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
-trigger:
-- main
+#trigger:
+#- main
 
-pool:
-  vmImage: ubuntu-latest
+#pool:
+#  vmImage: ubuntu-latest
 
-variables:
-  buildConfiguration: 'Release'
+#variables:
+#  buildConfiguration: 'Release'
 
-steps:
-- task: UseDotNet@2
-  displayName: dotnet sdk
-  inputs:
-    packageType: 'sdk'
-    version: '5.0.x'
+#steps:
+#- task: UseDotNet@2
+#  displayName: dotnet sdk
+#  inputs:
+#    packageType: 'sdk'
+#    version: '5.0.x'
 
-- task: UseDotNet@2
-  inputs:
-    packageType: 'runtime'
-    version: '2.x'
+#- task: UseDotNet@2
+#  inputs:
+#    packageType: 'runtime'
+#    version: '2.x'
 
-- task: SonarCloudPrepare@1
-  inputs:
-    SonarCloud: 'sonnarcloud-diego'
-    organization: '2102-feb08-net'
-    scannerMode: 'MSBuild'
-    projectKey: '2102-feb08-net_diego-project1'
-    projectName: 'diego-project1'
-    extraProperties: 'sonar.cs.opencover.reportsPaths=$(Agent.TempDirectory)/*/coverage.opencover.xml'
+#- task: SonarCloudPrepare@1
+#  inputs:
+#    SonarCloud: 'sonnarcloud-diego'
+#    organization: '2102-feb08-net'
+#    scannerMode: 'MSBuild'
+#    projectKey: '2102-feb08-net_diego-project1'
+#    projectName: 'diego-project1'
+#    extraProperties: 'sonar.cs.opencover.reportsPaths=$(Agent.TempDirectory)/*/coverage.opencover.xml'
 
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: dotnet build
-  workingDirectory: Store.WebUI
+#- script: dotnet build --configuration $(buildConfiguration)
+#  displayName: dotnet build
+#  workingDirectory: Store.WebUI
 
-- task: DotNetCoreCLI@2
-  displayName: dotnet test
-  inputs:
-    command: 'test'
-    arguments: '--configuration $(buildConfiguration) --collect "xplat code coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=cobertura,opencover'
-    workingDirectory: Store.WebUI/StoreTests
+#- task: DotNetCoreCLI@2
+#  displayName: dotnet test
+#  inputs:
+#    command: 'test'
+#    arguments: '--configuration $(buildConfiguration) --collect "xplat code coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=cobertura,opencover'
+#    workingDirectory: Store.WebUI/StoreTests
 
-- task: SonarCloudAnalyze@1
+#- task: SonarCloudAnalyze@1
 
-- task: SonarCloudPublish@1
-  inputs:
-    pollingTimeoutSec: '300'
+#- task: SonarCloudPublish@1
+#  inputs:
+#    pollingTimeoutSec: '300'
 
-- task: PublishCodeCoverageResults@1
-  inputs:
-    codeCoverageTool: 'Cobertura'
-    summaryFileLocation: '$(Agent.TempDirectory)/*/coverage.cobertura.xml'
+#- task: PublishCodeCoverageResults@1
+#  inputs:
+#   codeCoverageTool: 'Cobertura'
+#   summaryFileLocation: '$(Agent.TempDirectory)/*/coverage.cobertura.xml'
 
-- task: DotNetCoreCLI@2
-  displayName: dotnet publish
-  inputs:
-    command: 'publish'
-    publishWebProjects: true
-    workingDirectory: 'Store.WebUI/Store.WebUI'
-    zipAfterPublish: true
+#- task: DotNetCoreCLI@2
+#  displayName: dotnet publish
+#  inputs:
+#    command: 'publish'
+#    publishWebProjects: true
+#    workingDirectory: 'Store.WebUI/Store.WebUI'
+#    zipAfterPublish: true
 
-- task: AzureRmWebAppDeployment@4
-  displayName: app service deploy
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure subscription 1(e3450711-02f8-49c3-b563-6e6ba4e5f98c)'
-    appType: 'webApp'
-    WebAppName: '2102-rincon-store'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+#- task: AzureRmWebAppDeployment@4
+#  displayName: app service deploy
+#  inputs:
+#    ConnectionType: 'AzureRM'
+#    azureSubscription: 'Azure subscription 1(e3450711-02f8-49c3-b563-6e6ba4e5f98c)'
+#    appType: 'webApp'
+#    WebAppName: '2102-rincon-store'
+#    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
