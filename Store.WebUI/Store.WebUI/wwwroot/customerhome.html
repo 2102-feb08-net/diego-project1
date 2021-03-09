@@ -20,8 +20,18 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Location <span class="sr-only">(current)</span></a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Location <span class="sr-only">(current)</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="store-location">
+                            <button class="dropdown-item" type="button" id="store-item1" value="1">Mission Hills</button>
+                            <button class="dropdown-item" type="button" id="store-item2" value="2">Montclair</button>
+                            <button class="dropdown-item" type="button" id="store-item3" value="3">Las Tierras</button>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cart <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">LogOut</a>

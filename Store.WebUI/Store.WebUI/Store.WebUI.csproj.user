@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Controller_SelectedScaffolderID>MvcControllerEmptyScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Common/MVC/Controller</Controller_SelectedScaffolderCategoryPath>
-    <NameOfLastUsedPublishProfile>C:\revature\revproject1\diego-project1\Store.WebUI\Store.WebUI\Properties\PublishProfiles\2102-rincon-store - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
-    <ShowAllFiles>false</ShowAllFiles>
+    <NameOfLastUsedPublishProfile>C:\revature\revproject1\diego-project1\Store.WebUI\Store.WebUI\Properties\PublishProfiles\2102-rincon-gzstore - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
+    <ShowAllFiles>true</ShowAllFiles>
   </PropertyGroup>
 </Project>
