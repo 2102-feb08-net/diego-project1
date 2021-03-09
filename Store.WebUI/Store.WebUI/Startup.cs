@@ -41,6 +41,7 @@ namespace Store.WebUI
 
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<ILocationRepository, LocationRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

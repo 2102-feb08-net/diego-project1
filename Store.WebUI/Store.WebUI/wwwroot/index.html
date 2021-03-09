@@ -25,13 +25,10 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Location <span class="sr-only">(current)</span></a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="store-location">
-                            <button class="dropdown-item" type="button" id="store-item1" value="1">Mission Hills</button>
-                            <button class="dropdown-item" type="button" id="store-item2" value="2">Montclair</button>
-                            <button class="dropdown-item" type="button" id="store-item3" value="3">Las Tierras</button>
+                            <button class="dropdown-item" type="button" id="store-item1" value="1" onclick="loadInventory(this.id)">Mission Hills</button>
+                            <button class="dropdown-item" type="button" id="store-item2" value="2" onclick="loadInventory(this.id)">Montclair</button>
+                            <button class="dropdown-item" type="button" id="store-item3" value="3" onclick="loadInventory(this.id)">Las Tierras</button>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Cart <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="signin.html">SignIn</a>
@@ -49,6 +46,19 @@
         <h2>Popular Items</h2>
 
         <table class="table" id="product-table" hidden>
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <table class="table" id="store-product-table" hidden>
             <thead class="thead-dark">
                 <tr>
                     <th>ID</th>
