@@ -37,6 +37,6 @@ Alternatively, the link below will lead you to the website.
 * NOTE: The website will not be available if the App Service it stopped.
 # Usage #
 * On the navigation bar click on 'SignIn' and fill-in all fields to register to the store.
-  * On completion, a popup will be displayed to notify that signup was successful.
+   * On completion, a popup will be displayed to notify that signup was successful.
 * On the navigation bar click on 'LogIn' and enter your email and password.
 * On the navigation bar click on 'Location' and select any of the three locations to load its managed products.
