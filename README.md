@@ -38,7 +38,7 @@ Follow the instructions and select your App Service when prompted.
 Click on 'Publish' to launch the website.
 Alternatively, the link below will lead you to the website.
 * https://2102-rincon-gzstore.azurewebsites.net/index.html
-* NOTE: The website will not be available if the App Service it stopped.
+* NOTE: The website will not be available if the App Service is stopped.
 
 # Usage #
 * On the navigation bar click on 'SignIn' and fill-in all fields to register to the store.
